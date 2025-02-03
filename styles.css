@@ -95,3 +95,6 @@ h2 {
     text-align: center;
     color: darkgray;
 }
+.custom-list {
+  list-style-type: square;
+}
