@@ -1,44 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Travel</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Trái Tim Tình Yêu</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-   <div>
-      <nav class="navbar">
-        <ul>
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#about">Giới thiệu</a></li>
-        </ul>
-    </nav>
-    </div>
-    
-    <div>
-      <h2>
-      Chào Mừng Đến Với E-Travel
-      </h2>
-    </div>
-    
-    <div>
-      <section id="home" class="section">
-        <h1>Trang Chủ</h1>
-        <p>Chào mừng bạn đến với trang web của chúng tôi. Về chúng tôi:</p>
-        <ul>
-          <li>Hotline: 081 468 4781 </li>
-          <li>Email: maixuandat694@gmail.com </li>
-        </ul>
-      </section>
+<input type="text" id="nameInput" placeholder="Nhập tên người...">
+<button onclick="setName()">💖 Gắn vào trái tim 💖</button>
 
-      <section id="about" class="section">
-        <h1>Giới Thiệu</h1>
-        <p>Đây là E-Travel, trợ lí du lịch online, là trang web giúp bạn đi khắp các điểm du lịch nổi tiếng của Việt Nam</p>
-        <a id="start" href="https://youtube.com"> Let's goo! </a>
-      </section>
-      
-    </div>
+<div class="heart-container">
+    <div class="heart"></div>
+    <div class="name" id="heartName">💖</div>
+</div>
+
+<script>
+    function setName() {
+        const name = document.getElementById('nameInput').value;
+        document.getElementById('heartName').textContent = name || '💖';
+    }
+</script>
+
 </body>
 </html>
