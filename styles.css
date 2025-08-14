@@ -67,22 +67,6 @@ input {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-button {
-    padding: 8px 15px;
-    font-size: 16px;
-    background: #ff4b5c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-button:hover {
-    background: #e60026;
-}
-
 @keyframes heartbeat {
     0%, 100% {
         transform: rotate(-45deg) scale(1);
