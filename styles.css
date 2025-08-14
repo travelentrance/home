@@ -1,131 +1,93 @@
-html {
-    scroll-behavior: smooth;
-}
-
-body, ul, li, a {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Arial', sans-serif;
-}
-
-.section {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    height: 150px; 
-    text-align: center;
-    padding: 20px; 
-    background-color: #f4f4f4; 
-}
-.section1 {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    height: 150px; 
-    text-align: left;
-    padding: 20px; 
-    background-color: #f4f4f4; 
-}
-
-.navbar {
-    background-color: #333; 
-    overflow: hidden; 
-}
-
-.navbar ul {
-    list-style: none; 
-    display: flex; 
-    justify-content: center; 
-    padding: 0;
     margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.navbar li {
-    margin: 0 15px; 
+.heart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.navbar a {
-    text-decoration: none; 
-    color: white; 
-    padding: 10px 15px;
-    display: block; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-    border-radius: 100px;
-    font-size: 20px;
+.heart {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background: linear-gradient(145deg, #ff4b5c, #ff1e40);
+    transform: rotate(-45deg);
+    animation: heartbeat 1.2s infinite;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
 }
 
-.navbar a:hover {
-    background-color: #575757; 
-    color: #ffcc00; 
-    border-radius: 100px; 
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(145deg, #ff4b5c, #ff1e40);
+    border-radius: 50%;
 }
 
-#home {
-    background: #f4f4f4;
-    padding-top: 150px;
+.heart::before {
+    top: -100px;
+    left: 0;
 }
 
-#about {
-    background: #74ebd5;
-    padding-top: 150px;
+.heart::after {
+    top: 0;
+    left: 100px;
 }
-#infor {
-    padding-top: 150px;
-}
-#start {
-    text-decoration: none; 
-    color: black; 
-    transition: background-color 0.3s ease, color 0.3s ease; 
-    padding: 10px 15px;
-    border-radius: 100px;
-    font-size: 20px;
+
+.name {
+    position: absolute;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    white-space: nowrap;
+    pointer-events: none;
 }
-#start:hover {
-    text-decoration: none; 
-    color: white; 
-    background-color: #575757; 
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease; 
-    border-radius: 100px;
-    font-size: 20px;
-}
-@media (max-width: 768px) {
-    .navbar ul {
-        align-items: center;
-    }
 
-    .navbar a {
-        padding: 20px 20px;
-    }
+input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-    .section {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        text-align: center;
-        min-height: 100vh;
-    }
-    .item {
-        background: lightblue;
-        padding: 20px;
-        text-align: center;
-    }
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-h2 {
-    text-align: center;
-    color: darkgray;
+
+button:hover {
+    background: #e60026;
 }
-.custom-list {
-  list-style-type: square;
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: rotate(-45deg) scale(1);
+    }
+    50% {
+        transform: rotate(-45deg) scale(1.1);
+    }
 }
